@@ -97,7 +97,7 @@ end
 M_I1 = sum(M1);
 D_I1 = 0;
 for j = 1:16
-    D_I1 = D_I1 + D1(j)*p(j)*p(j)/N1(j);
+    D_I1 = D_I1 + D1(j)/N1(j);
 end
 time1 = toc;
 S_I1 = D_I1 * time1;
@@ -112,11 +112,11 @@ fprintf('Laboriousness(*10^8) %f\n', S_I1*10^8);
 tic
 GG = 0;
 for k = 1:16
-    GG = GG + sqrt(D1(k))'*p(k);
+    GG = GG + sqrt(D1(k))';
 end
 N = zeros(1,16);
 for i=1:16
-    N(i) = round(NN*p(i)*sqrt(D1(i))/(GG));
+    N(i) = round(NN*sqrt(D1(i))/(GG));
 end
 M = zeros(1,16);
 M2 = zeros(1,16);
@@ -138,7 +138,7 @@ end
 M_I = sum(M);
 D_I = 0;
 for j = 1:16
-    D_I = D_I + D(j)*p(j)*p(j)/N(j);
+    D_I = D_I + D(j)/N(j);
 end
 
 time = toc;
