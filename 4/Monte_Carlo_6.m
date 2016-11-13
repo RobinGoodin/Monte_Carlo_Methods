@@ -6,7 +6,7 @@ rand('seed',666);
 N = 50000;
 N_start  = 1000;
 N_step = 1000;
-C = 16.1975;
+C = 16.1975308642;
 Ni = N_start:N_step:N;
 res_old = zeros(length(Ni),1);
 res_new = zeros(length(Ni),1);
